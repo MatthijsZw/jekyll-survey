@@ -1,4 +1,4 @@
-var count = 0, page = 0;
+var page = 0;
 var id = Math.floor(Math.random() * 10000);
 
 var admin, db, surveyResponse, ref = null;
@@ -16,7 +16,10 @@ function nextPage()
   });
   document.getElementById("page" + page).style.display = "block";
   if(page === 1)
+  {
+    calcCombos()
     next()
+  }
   page++
 }
 

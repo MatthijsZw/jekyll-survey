@@ -10,6 +10,10 @@
     {% if page.layout == "intro" %}
     {% include intro.html content=page.content title=page.title %}
     {% endif %}
+    
+    {% if page.layout == "pairwise" %}
+    {% include pairwise.html content=page.content title=page.title questions=page.questions %}
+    {% endif %}
   </section>
   {% endfor %}
 
