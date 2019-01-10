@@ -1,0 +1,6 @@
+apiKey: "KDKfdf123"
+authDomain: "yoururl.firebaseapp.com"
+databaseURL: "https://yoururl.firebaseio.com"
+projectId: "projectname"
+storageBucket: "yoururl.appspot.com"
+messagingSenderId: "123"
