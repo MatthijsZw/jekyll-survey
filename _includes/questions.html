@@ -1,0 +1,61 @@
+<h1>{{ include.title }}</h1>
+{{ include.content | markdownify }}
+
+{% for q in include.questions %}
+<div class="question">
+<label for="{{ q.id }}">{{ q.label }}</label><br>
+{% case q.type %}
+{% when 'range' %}
+<span class="range_min_label">{{ q.min_label }}</span>
+<input type="range" class="range input_page{{ include.page }}" id="{{ q.id }}" name="{{ q.id }}" min="{{ q.min }}" max="{{ q.max }}" value="{{ q.value }}" step="{{ q.steps }}">
+<span class="range_max_label">{{ q.max_label }}</span>
+{% when 'text' %}
+<input type="text" class="text input_page{{ include.page }}" id="{{ q.id }}" name="{{ q.id }}" value="{{ q.value }}">
+{% endcase %}
+</div>
+{% endfor %}
+
+{% if include.button %}
+<br>
+<button onclick="collectAndSendInputs({{ include.page }}); nextPage()">{{ include.button }}</button>
+{% endif %}
+
+<style>
+  .question {
+    margin-top: 20px;
+  }
+
+  .range {
+    display:inline-block;
+    vertical-align:middle;
+    width: 50%;
+    margin: auto;
+  }
+
+  .range_min_label {
+    left: 0px;
+    width: 20%;
+  }
+
+  .range_max_label {
+    right: 0px;
+    width: 20%;
+  }
+</style>
+
+<script type="text/javascript">
+  function collectAndSendInputs(page) {
+    var inputs = document.getElementsByClassName("input_page" + page)
+    var sendObject = {}
+
+    for (var i = 0; i < inputs.length; i++)
+    {
+      sendObject[inputs[i].name] = inputs[i].value;
+    }
+
+    sendObject["id"] = id
+
+    surveyResponse = ref.push()
+    surveyResponse.set(sendObject)
+  }
+</script>
