@@ -1,0 +1,51 @@
+<h1>{{ include.title }}</h1>
+{{ include.content | markdownify }}
+<button onclick="nextPage()">Start</button>
+
+<script>
+  var animals = [{name: "Adult human", image: "https://i.kinja-img.com/gawker-media/image/upload/s--t3v-5K6H--/c_scale,f_auto,fl_progressive,q_80,w_800/bbzzph87t4jpwmzk54z3.jpg", img_pos: "40% 80%"}, {name: "Rhesus monkey", image: "https://images1.miaminewtimes.com/imager/u/745xauto/10764041/instagram-monkey.jpg", img_pos: "20% 20%"}, {name: "Apple's Siri", image: "https://boygeniusreport.files.wordpress.com/2014/03/siri-ios-7-sign.jpg?quality=98&strip=all&w=768", img_pos: "center"}]
+  var combos = [];
+
+  function calcCombos() {
+    for (var i = 0; i < animals.length; i++)
+      for (var j = i + 1; j < animals.length; j++)
+        combos[combos.length] = [i, j]
+  }
+
+  function storeAndNext(answer) {
+    var left = document.getElementById("left_title").innerHTML
+    var right = document.getElementById("right_title").innerHTML
+
+    setVal(left, right, answer)
+    next()
+  }
+
+  function setContent(id, name, img, pos) {
+    document.getElementById(id + "_title").innerHTML = name
+    document.getElementById(id + "_img").style.backgroundImage = "url('" + img + "')";
+  }
+
+  function setVal(a, b, slider) {
+    surveyResponse = ref.push();
+    surveyResponse.set({
+      a: a,
+      b: b,
+      slider: slider,
+      id: id
+    })
+  }
+
+  function next() {
+    document.getElementById("slider").style.width = (count / combos.length) * 100 + "%";
+    if (count < combos.length) {
+      var curPair = combos[count]
+      setContent("left", animals[curPair[0]].name, animals[curPair[0]].image, animals[curPair[0]].img_pos)
+
+      setContent("right", animals[curPair[1]].name, animals[curPair[1]].image, animals[curPair[1]].img_pos)
+      count++
+    } else {
+      alert("you're done, thanks!")
+      document.getElementById("bottombar").style.display = "none";
+    }
+  }
+</script>
