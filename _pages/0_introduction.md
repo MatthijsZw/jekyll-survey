@@ -1,7 +1,7 @@
 ---
-layout: intro
+layout: text
 title: Home
-nextButton: start
+button: start
 pageNo: 0
 ---
 

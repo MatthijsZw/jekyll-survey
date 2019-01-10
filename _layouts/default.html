@@ -7,12 +7,16 @@
   {% for page in site.pages %}
   <section id="page{{page.pageNo}}" class="page">
     <!-- page.layout: {{ page.layout }} -->
-    {% if page.layout == "intro" %}
-    {% include intro.html content=page.content title=page.title %}
+    {% if page.layout == "text" %}
+    {% include text.html content=page.content title=page.title button=page.button %}
     {% endif %}
-    
+
     {% if page.layout == "pairwise" %}
     {% include pairwise.html content=page.content title=page.title questions=page.questions %}
+    {% endif %}
+
+    {% if page.layout == "questions" %}
+    {% include questions.html content=page.content title=page.title questions=page.questions button=page.button page=page.pageNo%}
     {% endif %}
   </section>
   {% endfor %}
