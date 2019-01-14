@@ -43,7 +43,8 @@ module Jekyll
           #   _output += '<div class=\'likert\'>'
           # end
           id = line[/[\(](.*)[\)]/,1]
-          @likerts += "<span class='likert_item'><input type='radio' id='" + id + @name + "' "
+          @likerts += '<label class="likert_item" for="' + id + @name + '">'
+          @likerts += "<input type='radio' id='" + id + @name + "' "
 
           unless @name.nil?
             @likerts += "name='" + @name + "' "
@@ -53,11 +54,11 @@ module Jekyll
             @likerts += "checked"
           end
 
-          @likerts += ">"
+          @likerts += "><br><span>"
           # _output += "<label>" + line + "</label>"
-          @likerts += '<br><label for="' + id + @name + '">'
+
           @likerts += converter.convert(line[/[\)](.*)/,1]).gsub(/<\/?p[^>]*>/, "")
-          @likerts += "</label></span>"
+          @likerts += "</span></label>"
         else
           _output += converter.convert(line)
         end
