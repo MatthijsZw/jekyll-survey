@@ -22,11 +22,14 @@
   var animals = {{ include.questions | jsonify }}
   var combos = [];
   var count = 0;
+  var answers = []
 
   function calcCombos() {
     for (var i = 0; i < animals.length; i++)
       for (var j = i + 1; j < animals.length; j++)
-        combos[combos.length] = [i, j]
+      {
+        combos[combos.length] = [i, j, false]
+      }
   }
 
   function storeAndNext(answer) {
@@ -43,13 +46,7 @@
   }
 
   function setVal(a, b, slider) {
-    surveyResponse = ref.push();
-    surveyResponse.set({
-      a: a,
-      b: b,
-      slider: slider,
-      id: id
-    })
+    answers[answers.length] = [a, b, slider]
   }
 
   function next() {

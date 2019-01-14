@@ -1,12 +1,13 @@
 var page = 0;
 var id = Math.floor(Math.random() * 10000);
-
 var admin, db, surveyResponse, ref = null;
+
 function startDB()
 {
   // Get a database reference to our blog
   db = firebase.database();
-  ref = db.ref();
+  // Get a new reference:
+  ref = db.ref().push();
 }
 
 function nextPage()
@@ -15,12 +16,33 @@ function nextPage()
     pageElement.style.display = "none";
   });
   document.getElementById("page" + page).style.display = "block";
+
+  collectAndSendInputs()
+
   if(page === 1)
   {
     calcCombos()
     next()
   }
   page++
+}
+
+function collectAndSendInputs() {
+  var inputs = document.querySelectorAll("input")
+  var sendObject = {}
+
+  for (var i = 0; i < inputs.length; i++)
+  {
+    if(inputs[i].type == "radio" || inputs[i].type == "checkbox")
+      sendObject[inputs[i].name + "_" + inputs[i].id] = inputs[i].checked
+    else
+      sendObject[inputs[i].id] = inputs[i].value;
+  }
+
+  sendObject["pairwise"] = answers
+  sendObject["id"] = id
+
+  ref.set(sendObject)
 }
 
 function start()

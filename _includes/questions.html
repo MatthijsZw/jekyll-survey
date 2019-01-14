@@ -21,20 +21,4 @@
 <button onclick="collectAndSendInputs({{ include.page }}); nextPage()">{{ include.button }}</button>
 {% endif %}
 
-<script type="text/javascript">
-  function collectAndSendInputs(page) {
-    var inputs = document.getElementsByClassName("input_page" + page)
-    var sendObject = {}
-
-    for (var i = 0; i < inputs.length; i++)
-    {
-      sendObject[inputs[i].name] = inputs[i].value;
-    }
-
-    sendObject["id"] = id
-
-    surveyResponse = ref.push()
-    surveyResponse.set(sendObject)
-  }
-</script>
 </div>
