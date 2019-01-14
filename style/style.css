@@ -43,7 +43,6 @@ button {
   font-size: 36px;
   font-weight: bold;
 } */
-
 button:hover {
   background-color: green;
   transition: .15s transform cubic-bezier(.175, .885, .32, 1.5);
@@ -126,9 +125,45 @@ input {
   margin-right: 6px;
 }
 
+.likert {
+  text-align: center;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.likert_item::before {
+  /* line behind the radio-button-options */
+  content: '';
+  position: relative;
+  top: 13px;
+  display: block;
+  background-color: #efefef;
+  height: 4px;
+  width: 100%;
+
+  /* position: absolute; */
+  /* z-index: -1; */
+}
+
+.likert_item:first-child:before {
+  left: 53%;
+  width: 47%;
+}
+
+.likert_item:last-child:before {
+  right: 53%;
+}
+
+.likert_item {
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
+}
+
 .range {
-  display:inline-block;
-  vertical-align:middle;
+  display: inline-block;
+  vertical-align: middle;
   width: 50%;
   margin: auto;
 }
@@ -158,7 +193,6 @@ input {
   .text_section p {
     margin-left: 18px;
   } */
-
   p {
     font-size: 18px;
   }
