@@ -38,7 +38,7 @@ module Jekyll
       text.lines.each do |line|
         # if the line starts with [] or [.] or [ ] this must be turned into a radiobutton
         # we then get the id, which is the part after [] in ()
-        if line =~ /^[\[.|\]]/
+        if line =~ /^[\[X|\]]/
           id = line[/[\(](.*)[\)]/,1]
           _output += "<div><input type=" + @type + " id='" + id + "' "
 
@@ -46,7 +46,7 @@ module Jekyll
             _output += "name=" + @name + " "
           end
 
-          if line[1] == "."
+          if line[1] == "X"
             _output += "checked"
           end
 
