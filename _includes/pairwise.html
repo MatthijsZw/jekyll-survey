@@ -4,43 +4,19 @@
 <a href="#" onclick="storeAndNext('left')">
   <div class="block">
     <div id="left_img" class="img right"></div>
-    <h1 id="left_title">Empty</h1>
+    <label id="left_title">Empty</label>
   </div>
 </a>
 <a href="#" onclick="storeAndNext('right')">
   <div class="block">
     <div id="right_img" class="img left"></div>
-    <h1 id="right_title">Empty</h1>
+    <label id="right_title">Empty</label>
   </div>
 </a>
 
 <div id="bottombar">
   <div id="slider"></div>
 </div>
-
-<style type="text/css">
-  .block {
-    width: 50%;
-    float: left;
-    opacity: .5;
-  }
-
-  .block:hover {
-    opacity: 1;
-  }
-
-  #bottombar {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-  }
-
-  #slider {
-    width: 5%;
-    height: 10px;
-    background: orange;
-  }
-</style>
 
 <script>
   var animals = {{ include.questions | jsonify }}

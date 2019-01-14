@@ -1,3 +1,4 @@
+<div class="text_section">
 <h1>{{ include.title }}</h1>
 {{ include.content | markdownify }}
 
@@ -20,29 +21,6 @@
 <button onclick="collectAndSendInputs({{ include.page }}); nextPage()">{{ include.button }}</button>
 {% endif %}
 
-<style>
-  .question {
-    margin-top: 20px;
-  }
-
-  .range {
-    display:inline-block;
-    vertical-align:middle;
-    width: 50%;
-    margin: auto;
-  }
-
-  .range_min_label {
-    left: 0px;
-    width: 20%;
-  }
-
-  .range_max_label {
-    right: 0px;
-    width: 20%;
-  }
-</style>
-
 <script type="text/javascript">
   function collectAndSendInputs(page) {
     var inputs = document.getElementsByClassName("input_page" + page)
@@ -59,3 +37,4 @@
     surveyResponse.set(sendObject)
   }
 </script>
+</div>
