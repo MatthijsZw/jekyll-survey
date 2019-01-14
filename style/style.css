@@ -110,6 +110,7 @@ h1 {
   margin-top: 12px;
   background: #FFF;
   padding: 18px;
+  padding-bottom: 36px;
 }
 
 .question h1 {
@@ -125,8 +126,11 @@ input {
   margin-right: 6px;
 }
 
-.likert {
+.likert-question {
   text-align: center;
+}
+
+.likert {
   display: table;
   width: 100%;
   table-layout: fixed;
@@ -157,7 +161,6 @@ input {
 
 .likert_item {
   display: table-cell;
-  text-align: center;
   vertical-align: top;
 }
 

@@ -29,7 +29,7 @@ module Jekyll
 
       @name = attributes["name"].gsub!(/\A"|"\Z/, '')
 
-      _output += "<div class='question'>"
+      _output += "<div class='question likert-question'>"
 
       @likerts = ""
       i = 0
@@ -43,8 +43,8 @@ module Jekyll
           #   _output += '<div class=\'likert\'>'
           # end
           id = line[/[\(](.*)[\)]/,1]
-          @likerts += '<label class="likert_item" for="' + id + @name + '">'
-          @likerts += "<input type='radio' id='" + id + @name + "' "
+          @likerts += '<label class="likert_item" for="' + @name + "_"  + id + '">'
+          @likerts += "<input type='radio' id='" + @name + "_" + id + "' "
 
           unless @name.nil?
             @likerts += "name='" + @name + "' "

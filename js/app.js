@@ -34,7 +34,7 @@ function collectAndSendInputs() {
   for (var i = 0; i < inputs.length; i++)
   {
     if(inputs[i].type == "radio" || inputs[i].type == "checkbox")
-      sendObject[inputs[i].name + "_" + inputs[i].id] = inputs[i].checked
+      sendObject[inputs[i].id] = inputs[i].checked
     else
       sendObject[inputs[i].id] = inputs[i].value;
   }

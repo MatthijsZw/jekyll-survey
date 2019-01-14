@@ -25,8 +25,8 @@ module Jekyll
         attributes[key] = value
       end
 
-      @name = attributes["name"]
-      @type = attributes["type"]
+      @name = attributes["name"].gsub!(/\A"|"\Z/, '')
+      @type = attributes["type"].gsub!(/\A"|"\Z/, '')
 
       if @type.nil?
         @type = "radio"
@@ -40,10 +40,11 @@ module Jekyll
         # we then get the id, which is the part after [] in ()
         if line =~ /^[\[X|\]]/
           id = line[/[\(](.*)[\)]/,1]
-          _output += "<div><input type=" + @type + " id='" + id + "' "
+          _output += "<div>"
+          _output += '<label for="' + @name + '_' + id + '"><input type="' + @type + '" id="' + @name + '_' + id + '" '
 
           unless @name.nil?
-            _output += "name=" + @name + " "
+            _output += "name='" + @name + "' "
           end
 
           if line[1] == "X"
@@ -52,7 +53,6 @@ module Jekyll
 
           _output += ">"
           # _output += "<label>" + line + "</label>"
-          _output += '<label for="' + id + '">'
           _output += converter.convert(line[/[\)](.*)/,1]).gsub(/<\/?p[^>]*>/, "")
           _output += "</label></div>"
         else
