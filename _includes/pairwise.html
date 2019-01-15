@@ -43,6 +43,7 @@
   function setContent(id, name, img, pos) {
     document.getElementById(id + "_title").innerHTML = name
     document.getElementById(id + "_img").style.backgroundImage = "url('" + img + "')";
+    document.getElementById(id + "_img").style.backgroundPosition = pos;
   }
 
   function setVal(a, b, slider) {
