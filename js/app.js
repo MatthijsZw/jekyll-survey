@@ -29,6 +29,7 @@ function nextPage()
 
 function collectAndSendInputs() {
   var inputs = document.querySelectorAll("input")
+  var textareas = document.querySelectorAll("textarea")
   var sendObject = {}
 
   for (var i = 0; i < inputs.length; i++)
@@ -37,6 +38,11 @@ function collectAndSendInputs() {
       sendObject[inputs[i].id] = inputs[i].checked
     else
       sendObject[inputs[i].id] = inputs[i].value;
+  }
+
+  for (var i = 0; i < textareas.length; i++)
+  {
+    sendObject[textareas[i].id] = textareas[i].value;
   }
 
   sendObject["pairwise"] = answers
