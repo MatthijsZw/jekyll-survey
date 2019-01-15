@@ -38,6 +38,7 @@ button {
   margin-top: 18px;
   cursor: pointer;
   padding: 11px 21px;
+  margin-bottom: 50px; /* leave some space at the bottom of the page */
 }
 
 /* label {
@@ -139,8 +140,8 @@ input {
   margin-top: 18px;
 }
 
-.likert_item::before {
-  /* line behind the radio-button-options */
+/* line behind the radio-button-options */
+/* .likert_item::before {
   content: '';
   position: relative;
   top: 13px;
@@ -148,10 +149,7 @@ input {
   background-color: #efefef;
   height: 4px;
   width: 100%;
-
-  /* position: absolute; */
-  /* z-index: -1; */
-}
+} */
 
 .likert_item:first-child:before {
   left: 53%;
@@ -183,6 +181,23 @@ input {
 .range_max_label {
   right: 0px;
   width: 20%;
+}
+
+input[type=text] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
 /* -- responsive stuff */
