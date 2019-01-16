@@ -1,14 +1,11 @@
 # jekyll-survey
 
-A way to create simple surveys using Jekyll and storing answers in firebase.
+A way to create simple surveys using Jekyll and storing answers in firebase. An easy way to create surveys or questionnaires using markdown. You can create single-page or multi-page questionnaires. Answers are automatically stored in Firebase.
 
 **Please note:** I consider this code to be a 'working prototype'. It does not follow best-practice and is not production-ready.
 
 ## Why:
-With this method you can create fully customizable surveys. Everything is under your control: styling, question-types, etc.
-
-## What:
-An easy way to create surveys or questionnaires using Jekyll. You can create single-page or multi-page questionnaires. Answers are automatically stored in Firebase.
+Create fully customizable surveys. Everything is under your control: styling, question-types, etc.
 
 ## Set-up:
 1. Pull the code
@@ -81,6 +78,7 @@ this is line _two_ [click here to see my site](www.mysite.com)
 #### Likert-scales
 Likert-scales work the same as radiobuttons, but are visualized differently: the likert-scale is horizontal. It's possible to use any amount of options (5, 7 and 9 are typically used).
 
+```
 {% likert name:"emotion" type:"checkbox" %}
 # The capacity to experience emotions is important for intelligence
 [ ](str_agree) strongly agree
@@ -89,6 +87,7 @@ Likert-scales work the same as radiobuttons, but are visualized differently: the
 [](disagree) disagree
 [](str_disagree) strongly disagree
 {% endlikert %}
+```
 
 ### Pairwise_comparison
 This works differently from other question-types. Pairwise_comparison is a way to rank a list of options by providing binary choices between every combination.
