@@ -3,3 +3,4 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 _data/firebase.yml
+.DS_Store
