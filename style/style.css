@@ -85,9 +85,15 @@ h1 {
   border-radius: 2px;
   box-shadow: 0 3px 0 0 rgba(0, 0, 0, .03), 0 0 0 2px rgba(0, 0, 0, .03);
   float: left;
-  opacity: .5;
   padding-bottom: 20px;
   text-align: center;
+}
+
+/* if device supports hover, we show interaction possibility with a fade */
+@media (hover: hover) {
+  .block {
+    opacity: .5;
+  }
 }
 
 .block:hover {
