@@ -30,6 +30,8 @@
       {
         combos[combos.length] = [i, j, false]
       }
+    // randomize combos
+    combos = combos.sort(function() { return 0.5 - Math.random() })
   }
 
   function storeAndNext(answer) {
