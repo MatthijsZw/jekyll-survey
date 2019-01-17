@@ -1,4 +1,5 @@
 var page = 0;
+var startTime = new Date().toUTCString();
 var id = Math.floor(Math.random() * 10000);
 var admin, db, surveyResponse, ref = null;
 
@@ -47,6 +48,8 @@ function collectAndSendInputs() {
 
   sendObject["pairwise"] = answers
   sendObject["id"] = id
+  sendObject["startTime"] = startTime
+  sendObject["completeTime"] = new Date().toUTCString();
 
   ref.set(sendObject)
 }
