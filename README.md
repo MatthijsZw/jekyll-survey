@@ -12,7 +12,7 @@ Create fully customizable surveys. Everything is under your control: styling, qu
 2. update the `firebase.yml` with your account details
 
 ### Optional steps:
-1. update the `.gitignore` and delete the line about `firebase.yml` if you want to store your credentials in a git-repository
+1. update your private `.git/info/exclude/` and add a line about `firebase.yml` if you want don't want to push your credentials to a (public) repository
 2. enable google-analytics by setting the `ga`-code to your `UA`-number in the _config.yml
 
 ## Usage:

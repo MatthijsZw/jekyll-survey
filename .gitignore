@@ -2,5 +2,4 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-_data/firebase.yml
 .DS_Store
