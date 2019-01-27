@@ -1,6 +1,6 @@
 # jekyll-survey
 
-A way to create simple surveys using Jekyll and storing answers in firebase. An easy way to create surveys or questionnaires using markdown. You can create single-page or multi-page questionnaires. Answers are automatically stored in Firebase.
+A way to create simple surveys using Jekyll. You can create single-page or multi-page questionnaires. Answers are stored in Firebase (or a back-end of your choosing). [Example survey](https://matth-ijs.nl/files/jekyll_survey/index.html)
 
 **Please note:** I consider this code to be a 'working prototype'. It does not follow best-practice and is not production-ready.
 
