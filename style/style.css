@@ -65,6 +65,11 @@ h1 {
   display: none;
 }
 
+img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
 .img {
   background: white;
   background-image: url("");
